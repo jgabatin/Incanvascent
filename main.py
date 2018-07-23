@@ -1,4 +1,3 @@
-
 import webapp2
 import os
 import jinja2
@@ -8,14 +7,24 @@ jinja_current_directory = jinja2.Environment(
     loader=jinja2.FileSystemLoader( os.path.dirname(__file__) )
 )
 
-
 class Main_Page(webapp2.RequestHandler):
     def get( self ):
-        template = jinja_current_directory.get_template("templates/main_page.html")
+        template = jinja_current_directory.get_template("templates/sample_piano.html")
         self.response.write( template.render() )
 
 
 
+
+
+
+class User(ndb.Model):
+    user_name = ndb.StringProperty(required=True)
+    user_google = ndb.StringProperty(required=True)
+    user_pastSongs = ndb.StringProperty(required=True) #how to get an array?
+
+
+class Song(ndb.Model):
+    user_name = ndb.StringProperty(required=True)
 
 
 #route mapping
