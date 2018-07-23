@@ -1,6 +1,8 @@
-.quote {
+p {
   display: flex;
+  align-items: center;
   justify-content: center;
+  padding-top: 50px
 }
 
 #body {
@@ -10,6 +12,12 @@
 
 .notes {
   width: 100px;
+}
+
+.quote {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
 }
 
 button {
@@ -22,4 +30,5 @@ button {
 #button {
   display: flex;
   justify-content: center;
+  padding-top: 25px;
 }
