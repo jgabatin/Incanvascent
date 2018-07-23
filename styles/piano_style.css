@@ -1,5 +1,6 @@
 body {
   background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
+  background-size: cover;
 }
 .center {
   display: flex;
