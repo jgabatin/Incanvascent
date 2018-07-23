@@ -2,15 +2,11 @@
 import webapp2
 import os
 import jinja2
-import time
-
 from google.appengine.ext import ndb
-
 
 jinja_current_directory = jinja2.Environment(
     loader=jinja2.FileSystemLoader( os.path.dirname(__file__) )
 )
-
 
 
 class Main_Page(webapp2.RequestHandler):
