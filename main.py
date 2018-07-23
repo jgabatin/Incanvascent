@@ -1,6 +1,7 @@
 import webapp2
 import os
 import jinja2
+import json
 from google.appengine.ext import ndb
 
 jinja_current_directory = jinja2.Environment(
@@ -11,8 +12,6 @@ class Main_Page(webapp2.RequestHandler):
     def get( self ):
         template = jinja_current_directory.get_template("templates/sample_piano.html")
         self.response.write( template.render() )
-
-
 
 
 
