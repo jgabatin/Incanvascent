@@ -1,6 +1,4 @@
-#notes {
-  width=200px;
-  height=300px;
+.notes {
   vertical-align: center;
   justify-content: center;
 }
@@ -14,4 +12,11 @@ body {
   font-family: Helvetica;
   background-color: white;
   background-image: "images/musicalgif.gif"
+}
+
+.notes {
+  width: 100px;
+}
+.notes2 {
+  width: 100px;
 }
