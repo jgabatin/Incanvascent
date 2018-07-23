@@ -1,0 +1,8 @@
+.quote {
+  display: flex;
+  justify-content: center;
+}
+body {
+  background-color: white;
+  background-image: "images/musicalgif.gif"
+}
