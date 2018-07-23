@@ -10,25 +10,31 @@ jinja_current_directory = jinja2.Environment(
 
 class Main_Page(webapp2.RequestHandler):
     def get( self ):
+        template = jinja_current_directory.get_template("templates/main_page.html")
+        self.response.write( template.render() )
+
+class Piano_Keyboard_Handler(webapp2.RequestHandler):
+    def get(self):
         template = jinja_current_directory.get_template("templates/sample_piano.html")
         self.response.write( template.render() )
 
 
 
+# #objects for database
+class Song(ndb.Model):
+    notes_progression = ndb.StringProperty(repeated=True)
+
 
 class User(ndb.Model):
-    user_name = ndb.StringProperty(required=True)
-    user_google = ndb.StringProperty(required=True)
-    user_pastSongs = ndb.StringProperty(required=True) #how to get an array?
-
-
-class Song(ndb.Model):
-    user_name = ndb.StringProperty(required=True)
+    user_name = ndb.StringProperty(required=False)
+    user_google = ndb.StringProperty(required=False)
+    user_pastSongs = ndb.StringProperty(repeated=True)
 
 
 #route mapping
 app = webapp2.WSGIApplication([
     ('/', Main_Page),
+    ('/keyboard', Piano_Keyboard_Handler),
 ], debug=True)
 
 
