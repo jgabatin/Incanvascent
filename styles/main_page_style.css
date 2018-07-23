@@ -1,8 +1,17 @@
+#notes {
+  width=200px;
+  height=300px;
+  vertical-align: center;
+  justify-content: center;
+}
+
 .quote {
   display: flex;
   justify-content: center;
 }
+
 body {
+  font-family: Helvetica;
   background-color: white;
   background-image: "images/musicalgif.gif"
 }
