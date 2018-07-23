@@ -1,5 +1,7 @@
-.notes {
-  grid-column-end: span 2;.
+
+.quote {
+  display: flex;
+  justify-content: center;
 }
 body {
   background-color: white;
