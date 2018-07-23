@@ -1,4 +1,8 @@
-/* To center the text */
+.quote {
+  display: flex;
+  justify-content: center;
+}
 body {
-  vertical-align: middle; text-align: center;
+  background-color: white;
+  background-image: "images/musicalgif.gif"
 }
