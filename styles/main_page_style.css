@@ -1,4 +1,7 @@
-
+.notes {
+  height: 45%;
+  length: 45%;
+}
 .quote {
   display: flex;
   justify-content: center;
