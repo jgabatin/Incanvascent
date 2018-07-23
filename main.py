@@ -25,7 +25,7 @@ class Main_Page(webapp2.RequestHandler):
 #route mapping
 app = webapp2.WSGIApplication([
     ('/', Main_Page),
-], debug=True)a
+], debug=True)
 
 
 
