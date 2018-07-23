@@ -1,4 +1,3 @@
-
 import webapp2
 import os
 import jinja2
@@ -16,6 +15,17 @@ class Main_Page(webapp2.RequestHandler):
 
 
 
+
+
+
+class User(ndb.Model):
+    user_name = ndb.StringProperty(required=True)
+    user_google = ndb.StringProperty(required=True)
+    user_pastSongs = ndb.StringProperty(required=True) #how to get an array?
+
+
+class Song(ndb.Model):
+    user_name = ndb.StringProperty(required=True)
 
 
 #route mapping
