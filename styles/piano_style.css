@@ -1,3 +1,7 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
 .DA-Keyboardcontainer {
     font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
     color: #000;
@@ -20,7 +24,7 @@ ul.DA-PianoKeyboard li {
     border-color: #000;
     border-width: 2px 1px 2px 1px;
     border-radius: 0 0 4px 4px;
-    color: #ccc;
+    color: blue;
     text-align: center;
 }
 
@@ -41,15 +45,15 @@ ul.DA-PianoKeyboard li:last-of-type {
 .whiteKey {
     width: 30px;
     height: 150px;
-    background: #fff;
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg);
 }
 
 .whiteKey:hover:active {
-    background: #eee;
+    background: blue;
 }
 
 .whiteKey:hover {
-    background: #f9f9f9;
+    background-color: gray;
 }
 
 .blackKeySharp {
@@ -123,7 +127,7 @@ ul.DA-PianoKeyboard li:last-of-type {
 }
 
 .DA-Keyboardcontainer button:disabled:hover {
-    background-color: #fff;
+    background-color: blue;
 }
 
 
@@ -165,5 +169,3 @@ ul.DA-PianoKeyboard li:last-of-type {
     margin-left: 200px;
     height: 40px;
 }
-
-
