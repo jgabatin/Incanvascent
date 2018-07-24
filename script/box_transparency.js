@@ -14,6 +14,8 @@ window.onload = function() {
 }
 
 
+
+
 var counter = 0;
 
 function box_fade( note )
