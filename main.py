@@ -15,11 +15,6 @@ class Main_Page(webapp2.RequestHandler):
 
 class Piano_Keyboard_Handler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_current_directory.get_template("templates/sample_piano.html")
-        self.response.write( template.render() )
-
-class Piano_Keyboard_Handler2(webapp2.RequestHandler):
-    def get(self):
         template = jinja_current_directory.get_template("templates/piano_page.html")
         self.response.write( template.render() )
 
@@ -40,7 +35,6 @@ class User(ndb.Model):
 app = webapp2.WSGIApplication([
     ('/', Main_Page),
     ('/keyboard', Piano_Keyboard_Handler),
-    ('/keyboard2', Piano_Keyboard_Handler2),
 ], debug=True)
 
 
