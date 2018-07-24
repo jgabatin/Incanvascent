@@ -6,6 +6,6 @@ window.onload = function() {
 function box_fade( note )
 {
   console.log("Box-fade: " + note );
-  let div = document.querySelectorAll( "#0" );
+  let div = document.getElementById( "#0" );
 
 }
