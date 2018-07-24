@@ -1,3 +1,7 @@
+ body {
+  background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
+  background-size: cover;
+}
 .center {
   display: flex;
   justify-content: center;
@@ -45,7 +49,7 @@ ul.DA-PianoKeyboard li:last-of-type {
 .whiteKey {
     width: 30px;
     height: 150px;
-    background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg);
+    background-image: url(https://wildcodeschool.fr/wp-content/uploads/2017/01/colorful-266993_1920.jpg);
 }
 
 .whiteKey:hover:active {
@@ -168,4 +172,20 @@ ul.DA-PianoKeyboard li:last-of-type {
     display: inline-block;
     margin-left: 200px;
     height: 40px;
+}
+#image {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  background-color: blue;
+  width: 512px;
+  height: 512px;
+
 }

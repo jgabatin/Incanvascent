@@ -7,8 +7,8 @@ p {
 
 body {
   font-family: Helvetica;
-  background-color: white;
-  background-image: "images/musicalgif.gif"
+  flex: auto;
+  background-image: : url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
 }
 
 .notes {
