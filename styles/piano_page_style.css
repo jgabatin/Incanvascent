@@ -45,10 +45,11 @@ body {
 .keyboard-options {
   margin: 30px auto;
   width: auto;
-  text-align: center;
+  text-align: left;
   font-size: 12px;
   font-weight: 200;
   padding:10px;
+
 }
 
 .keyboard-holder {
