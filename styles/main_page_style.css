@@ -1,21 +1,15 @@
 p {
-  display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 50px
+  display: flex;
 }
 
 .logo {
-  font-family: 'Arimo', sans-serif;
-  display: flex;
   justify-content: center;
+  align-items: center;
+  display: flex;
   flex-direction: row;
   flex-direction: column;
-}
-
-body {
-  background-size: cover;
-  background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
 }
 
 .notes {
@@ -23,10 +17,10 @@ body {
 }
 
 .quote {
+  font-family: 'Arimo', sans-serif;
   display: flex;
   justify-content: center;
-  padding-top: 150px;
-  color: white;
+  color: black;
 }
 
 button {
@@ -40,5 +34,4 @@ button {
 #button {
   display: flex;
   justify-content: center;
-  padding-top: 25px;
 }
