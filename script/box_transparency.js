@@ -1,6 +1,3 @@
-
-
-
 window.onload = function() {
   console.log( "Hello World" );
 }
@@ -9,4 +6,6 @@ window.onload = function() {
 function box_fade( note )
 {
   console.log("Box-fade: " + note );
+  let div = document.querySelectorAll( "#0" );
+
 }
