@@ -6,7 +6,6 @@ p {
 }
 
 .logo {
-  font-family: 'Arimo', sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -14,8 +13,18 @@ p {
 }
 
 body {
-  background-size: cover;
-  background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
+  /* background-size: cover;
+  background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg); */
+}
+
+#sign_in {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+#sign_out {
+
 }
 
 .notes {
@@ -23,10 +32,10 @@ body {
 }
 
 .quote {
+  font-family: 'Arimo', sans-serif;
   display: flex;
   justify-content: center;
-  padding-top: 150px;
-  color: white;
+  color: black;
 }
 
 button {
@@ -40,5 +49,4 @@ button {
 #button {
   display: flex;
   justify-content: center;
-  padding-top: 25px;
 }
