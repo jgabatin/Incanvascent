@@ -70,7 +70,6 @@ body {
   z-index: 5;
   height: 583px;
   width: 960px;
-  background-color: white;
   grid-template-rows: 145.75px 145.75px 145.75px 145.75px;
   grid-template-columns: 240px 240px 240px 240px;
 }
@@ -87,14 +86,10 @@ body {
 }
 
 .transparent_box {
-  display: grid;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  height: 583px;
-  width: 960px;
   background-color: transparent;
-  grid-template-rows: 145.75px 145.75px 145.75px 145.75px;
-  grid-template-columns: 240px 240px 240px 240px;
+}
+
+
+.opaque_box {
+  background-color: white;
 }
