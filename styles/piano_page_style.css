@@ -86,6 +86,6 @@ body {
   z-index: 2;
 }
 
-#key {
-
+.transparent_box {
+  background-color: transparent;
 }
