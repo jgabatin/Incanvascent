@@ -236,7 +236,7 @@ function AudioSynthView() {
 
 	// Creates our audio player
 	var fnPlayNote = function(note, octave) {
-
+		box_fade(note);
 		src = __audioSynth.generate(selectSound.value, note, octave, 2);
 		container = new Audio(src);
 		container.addEventListener('ended', function() { container = null; });
