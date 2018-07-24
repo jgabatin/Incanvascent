@@ -16,19 +16,31 @@ var Synth, AudioSynth, AudioSynthInstrument;
 	AudioSynthInstrument = function AudioSynthInstrument(){this.__init__.apply(this,arguments);};
 	var setPriv = setPrivateVar.bind(AudioSynthInstrument.prototype);
 	var setPub = setPublicVar.bind(AudioSynthInstrument.prototype);
-	setPriv('__init__', function(a,b,c) {
-		if(!_encapsulated) { throw new Error('AudioSynthInstrument can only be instantiated from the createInstrument method of the AudioSynth object.'); }
+	setPriv('__init__', function(a,b,c)
+	{
+		if(!_encapsulated)
+		{
+			throw new Error('AudioSynthInstrument can only be instantiated from the createInstrument method of the AudioSynth object.');
+		}
 		setPrivateVar.call(this, '_parent', a);
 		setPublicVar.call(this, 'name', b);
 		setPrivateVar.call(this, '_soundID', c);
 	});
+
 	setPub('play', function(note, octave, duration) {
 		return this._parent.play(this._soundID, note, octave, duration);
 	});
+
 	setPub('generate', function(note, octave, duration) {
 		return this._parent.generate(this._soundID, note, octave, duration);
 	});
-	AudioSynth = function AudioSynth(){if(AudioSynthInstance instanceof AudioSynth){return AudioSynthInstance;}else{ this.__init__(); return this; }};
+
+	AudioSynth = function AudioSynth(){
+		if(AudioSynthInstance instanceof AudioSynth)
+		{
+			return AudioSynthInstance;}else{ this.__init__(); return this; }
+		};
+
 	setPriv = setPrivateVar.bind(AudioSynth.prototype);
 	setPub = setPublicVar.bind(AudioSynth.prototype);
 	setPriv('_debug',false,true);
@@ -64,7 +76,7 @@ var Synth, AudioSynth, AudioSynthInstrument;
 				var noteList = {};
 				for(var k in this._notes) {
 					noteList[k] = {};
-				} 
+				}
 				octaveList.push(noteList);
 			}
 			f.push(octaveList);
@@ -113,7 +125,7 @@ var Synth, AudioSynth, AudioSynthInstrument;
 			var decayLen = (sampleRate * time) | 0;
 
 			for (var i = 0 | 0; i !== attackLen; i++) {
-		
+
 				val = volume * (i/(sampleRate*attack)) * waveFunc.call(waveBind, i, sampleRate, frequency, volume);
 
 				data[i << 1] = val;
@@ -274,7 +286,7 @@ Synth.loadSoundProfile({
 		vars.valueTable = !vars.valueTable?[]:vars.valueTable;
 		if(typeof(vars.playVal)=='undefined') { vars.playVal = 0; }
 		if(typeof(vars.periodCount)=='undefined') { vars.periodCount = 0; }
-	
+
 		var valueTable = vars.valueTable;
 		var playVal = vars.playVal;
 		var periodCount = vars.periodCount;
@@ -285,33 +297,33 @@ Synth.loadSoundProfile({
 		var resetPlay = false;
 
 		if(valueTable.length<=Math.ceil(period)) {
-	
+
 			valueTable.push(Math.round(Math.random())*2-1);
-	
+
 			return valueTable[valueTable.length-1];
-	
+
 		} else {
-	
+
 			valueTable[playVal] = (valueTable[playVal>=(valueTable.length-1)?0:playVal+1] + valueTable[playVal]) * 0.5;
-	
+
 			if(playVal>=Math.floor(period)) {
 				if(playVal<Math.ceil(period)) {
 					if((periodCount%100)>=p_hundredth) {
 						// Reset
 						resetPlay = true;
 						valueTable[playVal+1] = (valueTable[0] + valueTable[playVal+1]) * 0.5;
-						vars.periodCount++;	
+						vars.periodCount++;
 					}
 				} else {
-					resetPlay = true;	
+					resetPlay = true;
 				}
 			}
-	
+
 			var _return = valueTable[playVal];
 			if(resetPlay) { vars.playVal = 0; } else { vars.playVal++; }
-	
+
 			return _return;
-	
+
 		}
 	}
 },

@@ -1,44 +1,49 @@
-p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px
-}
-
 .logo {
-  font-family: 'Arimo', sans-serif;
-  display: flex;
   justify-content: center;
+  align-items: center;
+  display: flex;
   flex-direction: row;
   flex-direction: column;
 }
 
-body {
-  background-size: cover;
-  background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
+.inlogo {
+  width: 400px;
+  padding-top: 200px;
 }
 
 .notes {
-  width: 100px;
+  width: 75px;
+}
+
+.notes2 {
+  width: 75px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
 .quote {
+  font-family: 'Varela Round', sans-serif;
   display: flex;
   justify-content: center;
-  padding-top: 150px;
-  color: white;
+  padding-top: 20px;
+  color: black;
 }
 
 button {
+  box-shadow: 0 3px lightgray;
   font-size: 20px;
   width: 150px;
   height: 50px;
   border-radius: 50px;
-  font-family: inherit;
+  color: #FF6501;
 }
 
 #button {
   display: flex;
   justify-content: center;
-  padding-top: 25px;
+  font-family: inherit;
 }
