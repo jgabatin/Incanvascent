@@ -1,3 +1,8 @@
+body {
+  background-image: url(https://newthink24.com/thinkpress/wp-content/uploads/2014/10/colorful-266993_1920.jpg);
+  background-size: cover;
+}
+
 .key {
   position: absolute;
   font-family: Helvetica;
@@ -9,7 +14,6 @@
   box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
   -webkit-transition: margin 0.05s ease, background-color 0.05s ease, box-shadow 0.05s ease;
 }
-
 
 .key:hover {
   background-color: rgb(255,192,32);
