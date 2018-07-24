@@ -16,31 +16,19 @@ var Synth, AudioSynth, AudioSynthInstrument;
 	AudioSynthInstrument = function AudioSynthInstrument(){this.__init__.apply(this,arguments);};
 	var setPriv = setPrivateVar.bind(AudioSynthInstrument.prototype);
 	var setPub = setPublicVar.bind(AudioSynthInstrument.prototype);
-	setPriv('__init__', function(a,b,c)
-	{
-		if(!_encapsulated)
-		{
-			throw new Error('AudioSynthInstrument can only be instantiated from the createInstrument method of the AudioSynth object.');
-		}
+	setPriv('__init__', function(a,b,c) {
+		if(!_encapsulated) { throw new Error('AudioSynthInstrument can only be instantiated from the createInstrument method of the AudioSynth object.'); }
 		setPrivateVar.call(this, '_parent', a);
 		setPublicVar.call(this, 'name', b);
 		setPrivateVar.call(this, '_soundID', c);
 	});
-
 	setPub('play', function(note, octave, duration) {
 		return this._parent.play(this._soundID, note, octave, duration);
 	});
-
 	setPub('generate', function(note, octave, duration) {
 		return this._parent.generate(this._soundID, note, octave, duration);
 	});
-
-	AudioSynth = function AudioSynth(){
-		if(AudioSynthInstance instanceof AudioSynth)
-		{
-			return AudioSynthInstance;}else{ this.__init__(); return this; }
-		};
-
+	AudioSynth = function AudioSynth(){if(AudioSynthInstance instanceof AudioSynth){return AudioSynthInstance;}else{ this.__init__(); return this; }};
 	setPriv = setPrivateVar.bind(AudioSynth.prototype);
 	setPub = setPublicVar.bind(AudioSynth.prototype);
 	setPriv('_debug',false,true);
