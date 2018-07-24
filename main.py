@@ -44,11 +44,16 @@ class Main_Page( webapp2.RequestHandler ):
             }
             self.response.write( with_user_template.render( jinja_values ))
 
+class Tutorial( webapp2.RequestHandler ):
+    def get(self):
+        start_template = jinja_current_directory.get_template("templates/instructions.html")
 
+        self.response.write( start_template.render())
 
 
 
 #route mapping
 app = webapp2.WSGIApplication([
     ('/', Main_Page),
+    ('/tutorial', Tutorial),
 ], debug=True)
