@@ -12,6 +12,8 @@ handlers:
   static_dir: script
 - url: /images
   static_dir: images
+- url: /music
+  static_dir: music
 #static directories should go ABOVE the catch all url (.*)
 - url: .*
   script: main.app
