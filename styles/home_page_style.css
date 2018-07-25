@@ -1,7 +1,9 @@
 body {
+  background: url(https://pre00.deviantart.net/dec7/th/pre/f/2016/027/e/2/wallpaper_geometric_color_22_2k_uhd_by_airworldking-d9pj983.png)
+  no-repeat center center fixed;
   background-size: cover;
-  background-image: url(http://res.freestockphotos.biz/pictures/9/9061-abstract-orange-and-red-background-pv.jpg);
 }
+
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 160px; /* Set the width of the sidebar */
@@ -44,7 +46,9 @@ border-radius: 15px;
 box-shadow: 0 9px #999;
 }
 
-#button:hover {background-color: lightgrey;}
+#button:hover {
+  background-color: lightgrey;
+}
 
 #button:active {
 background-color: #3e8e41;
@@ -63,16 +67,6 @@ transform: translateY(4px);
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-}
-
-hr {
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
 }
 
 .audbut {
