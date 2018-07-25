@@ -7,20 +7,15 @@
   </head>
 
   <body>
-
     <audio autoplay loop>
       <source src="/music/music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-  <div class= "audbut">
-  <h1> Welcome {{ name }} </h1>
-
-    <a href="{{ signout_page_url }}"> <button id="button">Sign Out</button></a>
-
-  </div>
-
-    <hr></hr>
+    <div class= "audbut">
+      <h1> Welcome {{ name }} </h1>
+      <a href="{{ signout_page_url }}"><button id="button">Sign Out</button></a>
+    </div>
 
     <!-- Side navigation -->
     <section class= "spacing">
@@ -32,23 +27,15 @@
       <!-- <a href="#">About</a> -->
       <!-- <a href="#">Contact</a> -->
     </div>
-  </section>
-
-
-    <!-- Page content -->
+    </section>
+    <!-- Page content
     <div class="main">
       <p> Welcome {{ name }} </p>
-
-      <!-- <a href="{{ signout_page_url }}"> Sign Out</a> -->
+      <a href="{{ signout_page_url }}"> Sign Out</a>
       <p>Added song name: {{song_name}}</p>
       <p>Added song artist: {{song_artist}}</p>
       <p>Added song notes: {{song_notes}}</p>
       <p>Added song type: {{song_type}}</p>
-    </div>
-
-
-
+    </div> -->
   </body>
-
-
 </html>
