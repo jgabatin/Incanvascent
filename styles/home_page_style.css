@@ -75,4 +75,7 @@ hr {
     border-width: 1px;
 }
 
-.audbut
+.audbut {
+  display: flex;
+  justify-content: space-between;
+}
