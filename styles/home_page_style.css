@@ -1,13 +1,19 @@
+body {
+  background-size: cover;
+  background-image: url(http://res.freestockphotos.biz/pictures/9/9061-abstract-orange-and-red-background-pv.jpg);
+}
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    /* top: 0; /* Stay at the top */ */
     left: 0;
     background-color: #111; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* The navigation menu links */
@@ -23,6 +29,29 @@
 .sidenav a:hover {
     color: #f1f1f1;
 }
+/* formats the button okur */
+#button {
+display: inline-block;
+padding: 15px 25px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+color: black;
+background-color: white;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+#button:hover {background-color: lightgrey;}
+
+#button:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
 
 /* Style page content */
 .main {
@@ -44,4 +73,9 @@ hr {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+}
+
+.audbut {
+  display: flex;
+  justify-content: space-between;
 }
