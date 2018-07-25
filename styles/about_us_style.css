@@ -1,0 +1,32 @@
+.floating-box{
+      display: flex;
+      justify-content: space-around;
+      /* width: 350px;
+      height: 500px;
+      margin: 5px;
+      vertical-align: middle; */
+      margin: auto;
+      padding-left: : 100px;
+      padding-right: : : 100px;
+      padding-top: : 100px;
+      border: color: #7D1D3F;
+}
+
+.roles {
+  display: flex;
+  justify-content: space-around;
+
+  text-align: center;
+}
+
+.bios {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 50px;
+
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
