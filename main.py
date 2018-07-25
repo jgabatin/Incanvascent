@@ -34,7 +34,7 @@ class Main_Page( webapp2.RequestHandler ):
             current_visitor.put()
 
             #display
-            with_user_template = jinja_current_directory.get_template("templates/piano_page.html")
+            with_user_template = jinja_current_directory.get_template("templates/home_page.html")
             jinja_values = {
             'name' : current_user.nickname(),
             'user_addr' : current_user.email(),
