@@ -12,3 +12,11 @@ class Song(ndb.Model):
     artist = ndb.StringProperty(required=False)
     note_progression = ndb.StringProperty(repeated=True)
     type = ndb.IntegerProperty(required=False)
+
+    def serialize( self ):
+        return {
+            'name' : self.name,
+            'artist' : self.artist,
+            'note_progression' : self.note_progression,
+            'type' : self.type
+        }
