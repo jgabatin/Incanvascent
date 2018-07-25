@@ -81,7 +81,8 @@ function box_fade( note )
       for( var i = note_progression.length; i < Math.pow( Song.type, 2 ); i ++ )
       {
         console.log( i );
-        div = document.getElementById("" + counter);
+        div = document.getElementById("" + i);
+        console.log( div );
         arr = div.className.split(" ");
         if (arr.indexOf("transparent_box") == -1) {
             div.className = "transparent_box";
