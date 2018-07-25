@@ -1,11 +1,37 @@
 window.onload = function() {
   console.log( "Hello World" );
+
+
+  for( var i = 0; i < 16; i ++ )
+  {
+    div = document.getElementById("" + i);
+    arr = div.className.split(" ");
+    if (arr.indexOf("transparent_box") == -1) {
+        div.className = "opaque_box";
+    }
+  }
+
 }
 
 
+
+
+var counter = 0;
+
 function box_fade( note )
 {
-  console.log("Box-fade: " + note );
-  let div = document.getElementById( "#0" );
+  if( counter < 16 )
+  {
+    console.log("Box-fade: " + note );
+    var div, arr;
+    div = document.getElementById("" + counter);
+    arr = div.className.split(" ");
+    if (arr.indexOf("transparent_box") == -1) {
+        div.className = "transparent_box";
+    }
+
+    counter ++;
+  }
+
 
 }
