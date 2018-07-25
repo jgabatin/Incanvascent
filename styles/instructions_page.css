@@ -1,0 +1,10 @@
+.mongie {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+body {
+  background-size: cover;
+  background-image: url(https://pre00.deviantart.net/dec7/th/pre/f/2016/027/e/2/wallpaper_geometric_color_22_2k_uhd_by_airworldking-d9pj983.png)
+}
