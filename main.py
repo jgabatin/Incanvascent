@@ -63,17 +63,18 @@ class Piano_Page( webapp2.RequestHandler ):
     def get(self):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
 
+        self.response.write( start_template.render() )
         # song_id = self.request.get("ID") #SET LATER
-        song_key = ndb.Key("Song", 5629499534213120)
 
-
+class Song_Handler(webapp2.RequestHandler):
+    def get(self):
+        song_key = ndb.Key("Song", 5021194726146048)
         selected_song = song_key.get()
-        python_to_js = {
-            'note_progression' : selected_song.note_progression,
-        }
-        # json.dump(python_to_js)
 
-        self.response.write( start_template.render( {'box' : selected_song.type} ) )
+
+
+        self.response.headers['Content-Type'] = "application/json"
+        self.response.write(json.dumps(selected_song.serialize()))
 
 
 class Add_Song_Page( webapp2.RequestHandler ):
@@ -160,5 +161,6 @@ app = webapp2.WSGIApplication([
     ('/tutorial', Tutorial_Page),
     ('/piano', Piano_Page),
     ('/add_song', Add_Song_Page),
+    ('/get_song', Song_Handler),
 
 ], debug=True)

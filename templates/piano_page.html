@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/piano_page_style.css">
     <script src="script/audiosynth.js"></script>
     <script src="script/audiosynth.view.js"></script>
@@ -21,11 +22,7 @@
         <img id="art" src= "images/imageforpiano.png">
         <div class="hid">
 
-          {% for r in range(box) %}
-            {% for c in range(box) %}
-              <div id="{{r * box + c}}">{{r * box + c}}</div>
-            {% endfor %}
-          {% endfor %}
+
 
         </div>
       </div>
