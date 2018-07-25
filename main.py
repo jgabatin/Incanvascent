@@ -63,7 +63,7 @@ class Piano_Page( webapp2.RequestHandler ):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
 
         song_id = self.request.get("ID") #SET LATER
-        selected_song = Song.query(Song.name == "Happy Birthday" ).get()
+        selected_song = Song.query(Song.ID == "Happy Birthday" ).get()
 
 
 
