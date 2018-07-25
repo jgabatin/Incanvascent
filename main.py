@@ -68,9 +68,9 @@ class Piano_Page( webapp2.RequestHandler ):
 
         selected_song = song_key.get()
         python_to_js = {
-            'song_progression' : selected_song.song_progression,
+            'note_progression' : selected_song.note_progression,
         }
-        
+        # json.dump(python_to_js)
 
         self.response.write( start_template.render( {'box' : selected_song.type} ) )
 
