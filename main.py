@@ -2,9 +2,11 @@ import webapp2
 import os
 import jinja2
 import json
+import math
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from models import Visitor, Song
+
 
 
 jinja_current_directory = jinja2.Environment(
@@ -53,12 +55,27 @@ class Tutorial_Page( webapp2.RequestHandler ):
 
 # class Home_Page(webapp2.RequestHandler):
 #     def get(self):
-# 
+#
+
 
 class Piano_Page( webapp2.RequestHandler ):
     def get(self):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
-        self.response.write( start_template.render())
+
+        song_id = self.request.get("ID") #SET LATER
+        selected_song = Song.query(Song.name == "Happy Birthday" ).get()
+
+
+
+
+
+
+
+
+
+
+
+        self.response.write( start_template.render( {'box' : selected_song.type} ) )
 
 
 class Add_Song_Page( webapp2.RequestHandler ):
@@ -67,19 +84,23 @@ class Add_Song_Page( webapp2.RequestHandler ):
         self.response.write( start_template.render())
 
     def post(self):
-        notes = self.request.get("notes").split()
+        notes = []
+        for i in self.request.get("notes"):
+            notes.append(i.upper())
+        # Get next whole square root
+        type = int(math.ceil( math.sqrt(len( notes )) ))
         name = self.request.get("name")
         artist = self.request.get("artist")
 
-        search = Song(name=name, artist=artist, note_progression=notes )
+        search = Song(name=name, artist=artist, note_progression=notes, type=type )
         search.put()
 
         variables = {
             'song_name' : search.name,
             'song_artist' : search.artist,
             'song_notes' : search.note_progression,
+            'song_type' : search.type,
         }
-
 
         start_template = jinja_current_directory.get_template("templates/home_page.html")
         self.response.write( start_template.render(variables))
