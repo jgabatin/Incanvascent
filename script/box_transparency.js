@@ -20,14 +20,18 @@ var counter = 0;
 
 function box_fade( note )
 {
-  console.log("Box-fade: " + note );
-  var div, arr;
-  div = document.getElementById("" + counter);
-  arr = div.className.split(" ");
-  if (arr.indexOf("transparent_box") == -1) {
-      div.className = "transparent_box";
+  if( counter < 16 )
+  {
+    console.log("Box-fade: " + note );
+    var div, arr;
+    div = document.getElementById("" + counter);
+    arr = div.className.split(" ");
+    if (arr.indexOf("transparent_box") == -1) {
+        div.className = "transparent_box";
+    }
+
+    counter ++;
   }
 
-  counter ++;
 
 }
