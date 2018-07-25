@@ -11,4 +11,4 @@ class Song(ndb.Model):
     name = ndb.StringProperty(required=False)
     artist = ndb.StringProperty(required=False)
     note_progression = ndb.StringProperty(repeated=True)
-    # progression = ndb.IntegerProperty(required=False)
+    type = ndb.IntegerProperty(required=False)
