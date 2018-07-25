@@ -7,10 +7,11 @@
   </head>
 
   <body>
-    <a href="{{ signout_page_url }}"> Sign Out</a>
+    <button id="button"><a href="{{ signout_page_url }}"> Sign Out</a></button>
     <hr></hr>
 
     <!-- Side navigation -->
+    <section class= "spacing">
     <div class="sidenav">
       <!-- <a href="#">Profile</a> -->
       <a href="http://localhost:8080/tutorial">Instructions</a> <!-- edit link when uploading to cloud -->
@@ -19,15 +20,14 @@
       <!-- <a href="#">About</a> -->
       <!-- <a href="#">Contact</a> -->
     </div>
+  </section>
 
 
     <!-- Page content -->
     <div class="main">
-      <p> Hello, {{ name }} </p>
-      <p>Your email address is {{ user_addr }}</p>
-      <p>Your user id is {{ user_id }}</p>
+      <p> Welcome {{ name }} </p>
+
       <!-- <a href="{{ signout_page_url }}"> Sign Out</a> -->
-      <p>You have visited this page {{ number_of_views }} times</p>
       <p>Added song name: {{song_name}}</p>
       <p>Added song artist: {{song_artist}}</p>
       <p>Added song notes: {{song_notes}}</p>
