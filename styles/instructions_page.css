@@ -4,7 +4,7 @@ body {
   background-size: cover;
   vertical-align: middle;
   text-align: center;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-name: slidein;
 }
 
