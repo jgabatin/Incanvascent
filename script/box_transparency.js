@@ -2,14 +2,17 @@ window.onload = function() {
   console.log( "Hello World" );
 
 
-  for( var i = 0; i < 16; i ++ )
-  {
-    div = document.getElementById("" + i);
-    arr = div.className.split(" ");
-    if (arr.indexOf("transparent_box") == -1) {
-        div.className = "opaque_box";
-    }
-  }
+  var response = jQuery.get("/get_song");
+  console.log( response )
+
+  // for( var i = 0; i < 16; i ++ )
+  // {
+  //   div = document.getElementById("" + i);
+  //   arr = div.className.split(" ");
+  //   if (arr.indexOf("transparent_box") == -1) {
+  //       div.className = "opaque_box";
+  //   }
+  // }
 
 }
 
