@@ -1,0 +1,47 @@
+body {
+  background: url(https://pre00.deviantart.net/dec7/th/pre/f/2016/027/e/2/wallpaper_geometric_color_22_2k_uhd_by_airworldking-d9pj983.png)
+  no-repeat center center fixed;
+  background-size: cover;
+  vertical-align: middle;
+  text-align: center;
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
+}
+
+.center {
+  font-family: 'Varela Round', sans-serif;
+  /* justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-direction: column; */
+}
+
+.palette {
+  padding-top: 20px;
+  width: 175px;
+}
+
+.howto {
+  font-size: xx-large;
+  color: white;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.inst {
+  font-size: large;
+  color: white;
+}
