@@ -51,6 +51,7 @@ body {
 }
 
 button {
+  cursor: pointer;
   box-shadow: 0 3px lightgray;
   font-size: 20px;
   width: 150px;
