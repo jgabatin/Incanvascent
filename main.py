@@ -53,6 +53,7 @@ class Tutorial_Page( webapp2.RequestHandler ):
         self.response.write( start_template.render())
 
 
+
 # class Home_Page(webapp2.RequestHandler):
 #     def get(self):
 #
@@ -62,18 +63,15 @@ class Piano_Page( webapp2.RequestHandler ):
     def get(self):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
 
-        song_id = self.request.get("ID") #SET LATER
-        selected_song = Song.query(Song.name == "Happy Birthday" ).get()
+        # song_id = self.request.get("ID") #SET LATER
+        song_key = ndb.Key("Song", 5021194726146048)
 
 
-
-
-
-
-
-
-
-
+        selected_song = song_key.get()
+        python_to_js = {
+            'note_progression' : selected_song.note_progression,
+        }
+        # json.dump(python_to_js)
 
         self.response.write( start_template.render( {'box' : selected_song.type} ) )
 
