@@ -64,7 +64,7 @@ class Piano_Page( webapp2.RequestHandler ):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
 
         # song_id = self.request.get("ID") #SET LATER
-        song_key = ndb.Key("Song", 5021194726146048)
+        song_key = ndb.Key("Song", 	5066549580791808)
 
 
         selected_song = song_key.get()
@@ -103,6 +103,10 @@ class Add_Song_Page( webapp2.RequestHandler ):
         start_template = jinja_current_directory.get_template("templates/home_page.html")
         self.response.write( start_template.render(variables))
 
+class About_Us( webapp2.RequestHandler ):
+    def get(self):
+        start_template = jinja_current_directory.get_template("templates/aboutus.html")
+        self.response.write( start_template.render())
 
 #         if not search_term:
 #             search_term = "dog"
@@ -160,5 +164,6 @@ app = webapp2.WSGIApplication([
     ('/tutorial', Tutorial_Page),
     ('/piano', Piano_Page),
     ('/add_song', Add_Song_Page),
+    ('/aboutus', About_Us),
 
 ], debug=True)

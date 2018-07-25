@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/styles/instructions_page.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .btn {
+    background-color: white;
+    border: none;
+    color: darkgray;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+</style>
+  </head>
+  <body>
+    <!-- Music -->
+    <audio autoplay loop>
+      <source src="/music/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+
+    <section class= "center">
+      <img class="palette" src="images/palette.gif">
+      <div class="howto">
+        <h1>HOW TO PLAY</h1>
+      </div>
+      <div class="inst">
+            <h2>Select a song.</h2>
+            <h2>Follow the song's note pattern through your keyboard.</h2>
+            <h2>Play the correct notes and solve the puzzle.</h2>
+      </div>
+    </section>
+      <a href="http://localhost:8080/"> <button class="btn"><i class="fa fa-home"></i> Home</button></a>
+  </body>
+</html>
