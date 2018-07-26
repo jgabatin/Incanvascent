@@ -1,10 +1,10 @@
 body {
   font-family: 'Varela Round', sans-serif;
-  /* animation-duration: 3s;
-  animation-name: slidein; */
+  animation-duration: 2.5s;
+  animation-name: slidein;
 }
 
-/* @keyframes slidein {
+@keyframes slidein {
   from {
     margin-top: 100%;
     width: 100%;
@@ -14,7 +14,7 @@ body {
     margin-bottom: 0%;
     width: 100%;
   }
-} */
+}
 
 .center {
   text-align: center;
