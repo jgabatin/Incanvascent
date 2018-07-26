@@ -9,7 +9,6 @@ window.onload = function() {
   img.style.visibility = 'hidden';
   call_back();
 
-  // var response = jQuery.get("/get_song", "", call_back );
 }
 
 
@@ -19,6 +18,14 @@ function call_back()
   //Reset Global Variables
   note_progression = Song.note_progression;
   counter = 0;
+
+  var notes_location = document.getElementById("song_notes");
+  for( var i = 0; i < note_progression.length; i ++ )
+  {
+    notes_location.innerText += " " + note_progression[i];
+  }
+
+
 
   var img = document.getElementById("art");
   img.style.visibility = 'visible';

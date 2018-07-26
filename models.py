@@ -14,11 +14,11 @@ class Song(ndb.Model):
     image = ndb.BlobProperty()
 
 
-    def serialize( self ):
-        return {
-            'name' : self.name,
-            'artist' : self.artist,
-            'note_progression' : self.note_progression,
-            'type' : self.type,
-            'image' : self.image,
-        }
+    # def serialize( self ):
+    #     return {
+    #         'name' : self.name,
+    #         'artist' : self.artist,
+    #         'note_progression' : self.note_progression,
+    #         'type' : self.type,
+    #         'image' : self.image,
+    #     }
