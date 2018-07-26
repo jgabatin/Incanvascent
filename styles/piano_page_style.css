@@ -80,7 +80,9 @@ body {
   position: relative;
 }
 #art {
-  z-index: 2;
+  z-index: 5;
+  /* height: 60%;
+  margin-top: 40px; */
 }
 
 .transparent_box {
