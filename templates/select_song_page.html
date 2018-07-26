@@ -7,10 +7,11 @@
 
   </head>
   <body>
+    <ul>
     {% for song in query_of_songs %}
-      <p class="song" id="{{song.key}}">{{song.name}}</p>
+      <li><a href="/piano?key={{song.key}}" class="song" id="{{song.key}}">{{song.name}} {{song.artist}}</a></li>
     {% endfor %}
-
+    </ul>
   </body>
 
 

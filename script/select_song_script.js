@@ -6,7 +6,6 @@ window.onload = function() {
     // console.log( songChoice[i]);
     songChoice[i].onclick = onSongClick;
   }
-
 }
 
 
@@ -14,17 +13,25 @@ window.onload = function() {
 function onSongClick(evt)
 {
   song_key = evt.target.id;
-
-
-  // console.log( song_key);
+  console.log( song_key);
   sendData(song_key);
 }
+
 
 function sendData(data){
   // console.log( data );
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", '/piano_page', true);
+  xhr.open("POST", '/piano', false);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  var actualObject = {'data': data}
+  var actualObject = { 'data': data }
+  console.log("hello")
   xhr.send(JSON.stringify(actualObject));
 }
+// function sendData(data){
+//   // console.log( data );
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", '/piano', true);
+//   xhr.setRequestHeader('Content-Type', 'application/json');
+//   var actualObject = {'data': data}
+//   xhr.send(JSON.stringify(actualObject));
+// }
