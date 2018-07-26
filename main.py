@@ -70,7 +70,7 @@ class Piano_Page( webapp2.RequestHandler ):
         jinja_song_dict = {
             'song_object' : json.dumps(song_dict, indent=2),
             'song_image' : base64.b64encode(selected_song.image),
-            
+
         }
 
         # song_dict = selected_song.to_dict()

@@ -99,3 +99,14 @@ body {
   width: 100%; */
   background-color: white;
 }
+
+#song_notes {
+  color: white;
+  text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}

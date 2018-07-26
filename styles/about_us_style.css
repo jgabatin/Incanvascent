@@ -1,5 +1,21 @@
 body {
   font-family: 'Varela Round', sans-serif;
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  background-size: ;
+  background-image: url(https://orig00.deviantart.net/26b4/f/2016/027/2/3/wallpaper_geometric_color_3_2k_uhd_by_airworldking-d9okfnp.png);
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
 }
 
 .center {
@@ -28,7 +44,7 @@ body {
 .aboutus {
   padding-top: 20px;
   font-size: xx-large;
-  color: #FF6501;
+  color: white;
 }
 
 .padimg {
@@ -36,27 +52,39 @@ body {
 }
 
 #j {
-  border: 3px solid #FF6501;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 }
 
 #d {
-  border: 3px solid #FF6501;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 }
 
 #c {
-  border: 3px solid #FF6501;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 }
 
 #john {
   font-size: x-large;
+  color: white;
 }
 
 #damon {
   font-size: x-large;
+  color: white;
 }
 
 #cher {
   font-size: x-large;
+  color: white;
 }
 
 .floating-box {
@@ -79,37 +107,37 @@ body {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin: 50px;
+  margin: 10px;
 }
 
 #j1 {
   color: white;
   border-radius: 25px;
-  background: #FF6501;
+  box-shadow: 0 3px white;
+  background: #59B6E9;
   padding: 20px;
   width: 300px;
   height: 100px;
-  box-shadow: 0 5px lightgray;
 }
 
 #d1 {
   color: white;
   border-radius: 25px;
-  background: #FF6501;
+  box-shadow: 0 3px white;
+  background: #58E3D1;
   padding: 20px;
   width: 300px;
   height: 100px;
-  box-shadow: 0 5px lightgray;
 }
 
 #c1 {
   color: white;
   border-radius: 25px;
-  background: #FF6501;
+  box-shadow: 0 3px white;
+  background: #F49598;
   padding: 20px;
   width: 300px;
   height: 100px;
-  box-shadow: 0 5px lightgray;
 }
 
 .grid {
