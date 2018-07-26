@@ -18,7 +18,6 @@ jinja_current_directory = jinja2.Environment(
 # Sign In stuff
 class Main_Page( webapp2.RequestHandler ):
     def get( self ):
-
         current_user = users.get_current_user()
         if not current_user:
             start_template = jinja_current_directory.get_template("templates/main_page.html")

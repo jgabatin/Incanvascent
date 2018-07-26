@@ -41,23 +41,25 @@
 
     <div class= "whole">
     <!-- Select Instrument Type -->
-    <!-- <div class="keyboard-options">
-      Sound
-      <select ID="sound">
-      	<option value="0" selected>Keyboard</option>
-      	<option value="1">Organ</option>
-        <option value="2">Acoustic Guitar</option>
-        <option value="3">EDM, bro!</option>
-      </select> -->
 
-      <!-- Select Range/Octave -->
-      <div class="keyboard-options">
-        Range [C<span ID="OCTAVE_LOWER">3</span>-B<span ID="OCTAVE_UPPER">5</span>]
-        <input type="button" ID="-_OCTAVE" value="-" />
-        <input type="button" ID="+_OCTAVE" value="+" /><br/>
+
+    <!-- Select Range/Octave -->
+    <div class="keyboard-options">
+      Range [C<span ID="OCTAVE_LOWER">3</span>-B<span ID="OCTAVE_UPPER">5</span>]
+      <input type="button" ID="-_OCTAVE" value="-" />
+      <input type="button" ID="+_OCTAVE" value="+" /><br/>
 
     <!-- Necessary for keyboard to show up -->
     <div ID="keyboard" class="keyboard-holder"></div>
+
+    <div class="keyboard-options">
+      Sound
+      <select ID="sound">
+        <option value="0" selected>Keyboard</option>
+        <option value="1">Organ</option>
+        <option value="2">Acoustic Guitar</option>
+        <option value="3">EDM, bro!</option>
+      </select>
 
     <!-- Necessary for keyboard to show up -->
     <script type="text/javascript">
