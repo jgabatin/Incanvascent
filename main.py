@@ -7,7 +7,7 @@ import logging
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from models import Visitor, Song
-
+import base64
 
 jinja_current_directory = jinja2.Environment(
     loader=jinja2.FileSystemLoader( os.path.dirname(__file__) ),
@@ -60,8 +60,53 @@ class Piano_Page( webapp2.RequestHandler ):
         key = ndb.Key(urlsafe=key_string)
         selected_song = key.get()
 
-        self.response.write( start_template.render({'song_object' : json.dumps(selected_song.to_dict(), indent=2) }) )
 
+
+        ##IMAGE STUFF
+        song_dict = selected_song.to_dict()
+        song_dict["image"] = ""
+
+
+        jinja_song_dict = {
+            'song_object' : json.dumps(song_dict, indent=2),
+            'song_image' : base64.b64encode(selected_song.image),
+
+        }
+
+        # song_dict = selected_song.to_dict()
+        # song_dict['image'] = base64.b64encode(selected_song.image)
+        self.response.write( start_template.render(jinja_song_dict) )
+
+
+
+
+
+    # def get(self):
+    #     start_template = jinja_current_directory.get_template("templates/piano_page.html")
+    #     #get key from "?key=" in url
+    #     key_string = self.request.get('key')
+    #     #translating key string from URL to an actual key
+    #     key = ndb.Key(urlsafe=key_string)
+    #     selected_song = key.get()
+    #
+    #     self.response.write( start_template.render({'song_object' : json.dumps(selected_song.to_dict(), indent=2) }) )
+
+'''
+start_template = jinja_current_directory.get_template("templates/piano_page.html")
+#get key from "?key=" in url
+key_string = self.request.get('key')
+#translating key string from URL to an actual key
+key = ndb.Key(urlsafe=key_string)
+selected_song = key.get()
+
+
+song_dict = {
+    'song_object' : json.dumps(selected_song.to_dict(), indent=2),
+    'encoded_image' : base64.encodestring(selected_song.image)
+}
+
+
+'''
 
 class Select_Song_Page( webapp2.RequestHandler ):
     def get(self):
@@ -83,17 +128,17 @@ class Add_Song_Page( webapp2.RequestHandler ):
         type = int(math.ceil( math.sqrt(len( notes )) ))
         name = self.request.get("name")
         artist = self.request.get("artist")
+        image = self.request.get("song_image")
 
-        # image = self.request.get("song_image")
-
-        search = Song(name=name, artist=artist, note_progression=notes, type=type )
-        search.put()
+        current_song = Song(name=name, artist=artist, note_progression=notes, type=type, image=image )
+        current_song.put()
 
         variables = {
-            'song_name' : search.name,
-            'song_artist' : search.artist,
-            'song_notes' : search.note_progression,
-            'song_type' : search.type,
+            'song_name' : current_song.name,
+            'song_artist' : current_song.artist,
+            'song_notes' : current_song.note_progression,
+            'song_type' : current_song.type,
+            'song_image' : current_song.image,
         }
 
         start_template = jinja_current_directory.get_template("templates/home_page.html")

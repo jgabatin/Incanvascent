@@ -67,11 +67,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 5;
-  height: 583px;
-  width: 960px;
-  /* grid-template-rows: 145.75px 145.75px 145.75px 145.75px; */
-  /* grid-template-columns: 240px 240px 240px 240px; */
 }
 
 .whole {
@@ -82,29 +80,19 @@ body {
   position: relative;
 }
 #art {
-  z-index: 2;
+  z-index: 5;
+  /* height: 60%;
+  margin-top: 40px; */
 }
 
 .transparent_box {
-  /* display: grid; */
-  /* position: absolute; */
-  /* top: 0;
-  left: 0; */
   z-index: 5;
-  /* height: 583px;
-  width: 960px; */
   background-color: transparent;
 }
 
 
 .opaque_box {
-  /* display: grid; */
-  /* position: absolute; */
-  /* top: 0;
-  left: 0; */
   z-index: 5;
-  /* height: 583px;
-  width: 960px; */
   background-color: white;
 }
 
