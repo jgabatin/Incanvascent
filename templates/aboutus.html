@@ -1,28 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title> About Us </title>
+    <title>About Us</title>
     <link rel="stylesheet" href="/styles/about_us_style.css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  .btn {
-    background-color: white;
-    border: none;
-    color: darkgray;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-/* Darker background on mouse-over */
-.btn:hover {
-    background-color: lightgray;
-    color: white;
-}
-</style>
-  </head>
   <body>
     <!-- Music -->
     <audio autoplay loop>
@@ -30,41 +12,37 @@
     Your browser does not support the audio element.
     </audio>
 
-      <a href="http://localhost:8080/"> <button class="btn"><i class="fa fa-home"></i> Home</button></a>
-<div>
-  <h1> About Us </h1>
+    <a href="http://localhost:8080/">
+    <button class="btn" id="hbut">home</button></a>
 
-<div class= "floating-box">
-
-  <img height="300px" id= "j"src="/images/John.jpg">
-
-
-  <img height="300px"id= "d"src="/images/Damon.jpg">
-
-  <img height= "300px" id= "c"src="images/Cher.jpg">
-
-</div>
-<div class="roles">
-<p id= "john"> Front-End Engineer</p>
-<p id= "damon"> Fullstack Engineer</p>
-<p id= "cher"> Back-End Engineer</p>
-</div>
-
-<div class="grid">
-<div class="bios">
-  <p> John is from the west-coast & will be studying Computer Science. </p>
-</div>
-  <div class="bios">
-  <p> Damon is from the Midwest & will be studing Computer Science & Economics at the UChicago.
-    He is passionate about art and hopes to blend his technical skills with his talents. He's a
-  source of inspiration for all. </p>
-  </div>
+    <section class="center">
+      <div class="aboutus">
+        <h1>About Us</h1>
+      </div>
+      <div class= "floating-box">
+        <img height="400px" width= "300px" id= "j" src="/images/John.jpg">
+        <img height="400px" width= "300px" id= "d" src="/images/Damon.jpg">
+        <img height="400px" width= "300px" id= "c" src="images/Cher.jpg">
+      </div>
+    </section>
+    <div class="roles">
+        <p id= "john">Front-End Engineer</p>
+        <p id= "damon">Fullstack Engineer</p>
+        <p id= "cher">Back-End Engineer</p>
+    </div>
+    <div class="grid">
     <div class="bios">
-  <p> Cher is from west-coast & will be studying Computer Science. </p>
-</div>
-</div>
-
-
-
-  </body>
+      <p> John is from the west-coast & will be studying Computer Science. </p>
+    </div>
+    <div class="bios">
+      <p> Damon is from the Midwest & will be studing Computer Science & Economics at the UChicago.
+          He is passionate about art and hopes to blend his technical skills with his talents. He's a
+          source of inspiration for all.
+      </p>
+    </div>
+    <div class="bios">
+      <p> Cher is from west-coast & will be studying Computer Science. </p>
+   </div>
+   </div>
+ </body>
 </html>
