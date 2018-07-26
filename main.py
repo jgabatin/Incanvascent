@@ -84,9 +84,9 @@ class Add_Song_Page( webapp2.RequestHandler ):
         name = self.request.get("name")
         artist = self.request.get("artist")
 
-        image = self.request.get("song_image")
+        # image = self.request.get("song_image")
 
-        search = Song(name=name, artist=artist, note_progression=notes, type=type, image=image )
+        search = Song(name=name, artist=artist, note_progression=notes, type=type )
         search.put()
 
         variables = {
