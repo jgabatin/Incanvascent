@@ -54,12 +54,13 @@ class Tutorial_Page( webapp2.RequestHandler ):
 class Piano_Page( webapp2.RequestHandler ):
     def get(self):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
-        self.response.write( start_template.render() )
+        #get key from "?key=" in url
+        key_string = self.request.get('key')
+        #translating key string from URL to an actual key
+        key = ndb.Key(urlsafe=key_string)
+        selected_song = key.get()
 
-    def post(self):
-        logging.info(self.request.body)
-        key = json.loads(self.request.body)["data"]
-        logging.info(key)
+        self.response.write( start_template.render({'song_object' : json.dumps(selected_song.to_dict(), indent=2) }) )
 
 
 class Select_Song_Page( webapp2.RequestHandler ):
@@ -69,24 +70,18 @@ class Select_Song_Page( webapp2.RequestHandler ):
         self.response.write( start_template.render({'query_of_songs' : my_query}) )
 
 
-class Song_Handler(webapp2.RequestHandler):
-    def post(self):
-        key = json.loads(self.request.body.get('data'))
-        logging.info("test")
-        logging.info( key )
-        song_key = ndb.Key("Song", key )
-        selected_song = song_key.get()
-
-    def get(self):
-        #getting javascript
-        key = json.loads(self.request.body.get('data'))
-        logging.info("test")
-        logging.info( key )
-        song_key = ndb.Key("Song", key )
-        selected_song = song_key.get()
-        #sending info from python to javascript (a different part from js to python)
-        self.response.headers['Content-Type'] = "application/json"
-        self.response.write(json.dumps(selected_song.serialize()))
+# class Song_Handler(webapp2.RequestHandler):
+#     def get(self):
+#         #getting javascript
+#         key = json.loads(self.request.body.get('data'))
+#         logging.info("get handler test")
+#         logging.info( key )
+#
+#         song_key = ndb.Key("Song", key )
+#         selected_song = song_key.get()
+#         #sending info from python to javascript (a different part from js to python)
+#         self.response.headers['Content-Type'] = "application/json"
+#         self.response.write(json.dumps(selected_song.serialize()))
 
 # class Piano_Page( webapp2.RequestHandler ):
 #     def get(self):
@@ -157,7 +152,7 @@ app = webapp2.WSGIApplication([
     ('/select_song', Select_Song_Page),
     ('/add_song', Add_Song_Page),
     ('/aboutus', About_Us),
-    ('/get_song', Song_Handler),
+    # ('/get_song', Song_Handler),
 
 
 ], debug=True)

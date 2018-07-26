@@ -1,26 +1,24 @@
-var Song;
 var note_progression;
 var counter;
 
 
 window.onload = function() {
   console.log( "Hello World" );
-  Song = null;
-  note_progression = [];
-  counter = 0;
 
   var img = document.getElementById("art");
   img.style.visibility = 'hidden';
+  call_back();
 
-  var response = jQuery.get("/get_song", "", call_back );
+  // var response = jQuery.get("/get_song", "", call_back );
 }
 
 
 
-function call_back( a, b, c )
+function call_back()
 {
-  Song = c.responseJSON;
+  //Reset Global Variables
   note_progression = Song.note_progression;
+  counter = 0;
 
   var img = document.getElementById("art");
   img.style.visibility = 'visible';
