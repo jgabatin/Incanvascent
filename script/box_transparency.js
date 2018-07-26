@@ -32,15 +32,15 @@ function call_back()
 
   dimension = Song.type;
   html = document.getElementById( "hid" );
-  html.style.gridTemplateColumns = "repeat(" + dimension + ", " + (960/dimension) + "px)";
-  html.style.gridTemplateRows = "repeat(" + dimension + ", " + (582/dimension) + "px)";
+  html.style.gridTemplateColumns = "repeat(" + dimension + ", " + (100/dimension) + "%)";
+  html.style.gridTemplateRows = "repeat(" + dimension + ", " + (100/dimension) + "%)";
   for( var r = 0; r < dimension; r ++ )
   {
     for( var c = 0; c < dimension; c ++ )
     {
       var newElem = html.appendChild( document.createElement('div') )
-      newElem.style.height = "" + (582/dimension) + "px";
-      newElem.style.width = "" + (960/dimension) + "px";
+      // newElem.style.height = "100%"; //+ (100/dimension) + "%";
+      // newElem.style.width = "100%"; //+ (100/dimension) + "%";
       newElem.id = (r * dimension + c);
       newElem.className = "opaque_box";
     }
