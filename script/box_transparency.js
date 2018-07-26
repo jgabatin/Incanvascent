@@ -34,7 +34,7 @@ function call_back()
       var newElem = html.appendChild( document.createElement('div') )
       newElem.style.height = "" + (582/dimension) + "px";
       newElem.style.width = "" + (960/dimension) + "px";
-      newElem.id = (r * 4 + c);
+      newElem.id = (r * dimension + c);
       newElem.className = "opaque_box";
     }
   }
@@ -55,6 +55,7 @@ function box_fade( note )
         div.className = "transparent_box";
     }
     counter ++;
+    console.log( counter );
 
     if( counter == note_progression.length )
     {
