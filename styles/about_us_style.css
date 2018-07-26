@@ -1,6 +1,20 @@
 body {
   font-family: 'Varela Round', sans-serif;
+  /* animation-duration: 3s;
+  animation-name: slidein; */
 }
+
+/* @keyframes slidein {
+  from {
+    margin-top: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
+} */
 
 .center {
   text-align: center;
@@ -37,14 +51,23 @@ body {
 
 #j {
   border: 3px solid #FF6501;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 }
 
 #d {
   border: 3px solid #FF6501;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 }
 
 #c {
   border: 3px solid #FF6501;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 }
 
 #john {
@@ -79,7 +102,7 @@ body {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin: 50px;
+  margin: 10px;
 }
 
 #j1 {
@@ -89,7 +112,6 @@ body {
   padding: 20px;
   width: 300px;
   height: 100px;
-  box-shadow: 0 5px lightgray;
 }
 
 #d1 {
@@ -99,7 +121,6 @@ body {
   padding: 20px;
   width: 300px;
   height: 100px;
-  box-shadow: 0 5px lightgray;
 }
 
 #c1 {
@@ -109,7 +130,6 @@ body {
   padding: 20px;
   width: 300px;
   height: 100px;
-  box-shadow: 0 5px lightgray;
 }
 
 .grid {
