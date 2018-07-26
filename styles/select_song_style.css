@@ -4,7 +4,8 @@ body {
   background-size: cover;
   font-family: 'Varela Round', sans-serif;
 }
-#lobut {
+
+.btn {
   font-size: 20px;
   width: 150px;
   height: 50px;
@@ -13,5 +14,12 @@ body {
   right:25px;
   display: flex;
   justify-content: center;
+}
+
+#hbut {
+  cursor: pointer;
+  box-shadow: 0 3px lightgray;
+  border-radius: 50px;
+  color: #FF6501;
   font-family: inherit;
 }
