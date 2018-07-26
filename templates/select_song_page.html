@@ -18,7 +18,7 @@
 
     <ul>
     {% for song in query_of_songs %}
-      <li><a href="/piano?key={{song.key}}" class="song" id="{{song.key}}">{{song.name}} {{song.artist}}</a></li>
+      <li><a href="/piano?key={{song.key.urlsafe()}}" class="song" id="{{song.key}}">{{song.name}} {{song.artist}}</a></li>
     {% endfor %}
     </ul>
   </body>

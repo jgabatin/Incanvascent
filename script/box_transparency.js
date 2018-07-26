@@ -1,26 +1,31 @@
-var Song;
 var note_progression;
 var counter;
 
 
 window.onload = function() {
   console.log( "Hello World" );
-  Song = null;
-  note_progression = [];
-  counter = 0;
 
   var img = document.getElementById("art");
   img.style.visibility = 'hidden';
+  call_back();
 
-  var response = jQuery.get("/get_song", "", call_back );
 }
 
 
 
-function call_back( a, b, c )
+function call_back()
 {
-  Song = c.responseJSON;
+  //Reset Global Variables
   note_progression = Song.note_progression;
+  counter = 0;
+
+  var notes_location = document.getElementById("song_notes");
+  for( var i = 0; i < note_progression.length; i ++ )
+  {
+    notes_location.innerText += " " + note_progression[i];
+  }
+
+
 
   var img = document.getElementById("art");
   img.style.visibility = 'visible';
@@ -36,7 +41,7 @@ function call_back( a, b, c )
       var newElem = html.appendChild( document.createElement('div') )
       newElem.style.height = "" + (582/dimension) + "px";
       newElem.style.width = "" + (960/dimension) + "px";
-      newElem.id = (r * 4 + c);
+      newElem.id = (r * dimension + c);
       newElem.className = "opaque_box";
     }
   }
@@ -57,6 +62,7 @@ function box_fade( note )
         div.className = "transparent_box";
     }
     counter ++;
+    console.log( counter );
 
     if( counter == note_progression.length )
     {
