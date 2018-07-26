@@ -39,8 +39,6 @@ function call_back()
     for( var c = 0; c < dimension; c ++ )
     {
       var newElem = html.appendChild( document.createElement('div') )
-      // newElem.style.height = "100%"; //+ (100/dimension) + "%";
-      // newElem.style.width = "100%"; //+ (100/dimension) + "%";
       newElem.id = (r * dimension + c);
       newElem.className = "opaque_box";
     }

@@ -70,8 +70,6 @@ body {
   bottom: 0;
   right: 0;
   z-index: 5;
-  /* grid-template-rows: 145.75px 145.75px 145.75px 145.75px; */
-  /* grid-template-columns: 240px 240px 240px 240px; */
 }
 
 .whole {
@@ -86,8 +84,6 @@ body {
 }
 
 .transparent_box {
-  /* height: 100%;
-  width: 100%; */
   z-index: 5;
   background-color: transparent;
 }
@@ -95,8 +91,6 @@ body {
 
 .opaque_box {
   z-index: 5;
-  /* height: 100%;
-  width: 100%; */
   background-color: white;
 }
 
