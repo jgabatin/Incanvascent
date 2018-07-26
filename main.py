@@ -57,7 +57,6 @@ class Piano_Page( webapp2.RequestHandler ):
         self.response.write( start_template.render() )
 
     def post(self):
-        #getting javascript
         logging.info(self.request.body)
         key = json.loads(self.request.body)["data"]
         logging.info(key)
@@ -72,7 +71,6 @@ class Select_Song_Page( webapp2.RequestHandler ):
 
 class Song_Handler(webapp2.RequestHandler):
     def post(self):
-        #getting javascript
         key = json.loads(self.request.body.get('data'))
         logging.info("test")
         logging.info( key )
