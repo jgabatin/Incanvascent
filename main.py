@@ -83,17 +83,17 @@ class Add_Song_Page( webapp2.RequestHandler ):
         type = int(math.ceil( math.sqrt(len( notes )) ))
         name = self.request.get("name")
         artist = self.request.get("artist")
-
         image = self.request.get("song_image")
 
-        search = Song(name=name, artist=artist, note_progression=notes, type=type, image=image )
-        search.put()
+        current_song = Song(name=name, artist=artist, note_progression=notes, type=type, image=image )
+        current_song.put()
 
         variables = {
-            'song_name' : search.name,
-            'song_artist' : search.artist,
-            'song_notes' : search.note_progression,
-            'song_type' : search.type,
+            'song_name' : current_song.name,
+            'song_artist' : current_song.artist,
+            'song_notes' : current_song.note_progression,
+            'song_type' : current_song.type,
+            'song_image' : current_song.image,
         }
 
         start_template = jinja_current_directory.get_template("templates/home_page.html")
