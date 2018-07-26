@@ -13,7 +13,6 @@ jinja_current_directory = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-# KEY_OF_SONG = ""
 
 # Sign In stuff
 class Main_Page( webapp2.RequestHandler ):
@@ -66,16 +65,14 @@ class Select_Song_Page( webapp2.RequestHandler ):
 
 class Song_Handler(webapp2.RequestHandler):
     def get(self):
-        ##GET KEY SOMEHOW
-
+        #getting javascript
         requestObject = json.loads(self.request.body)
-        userdata = requestObjet.get('data')
-        myuser = UserData()
+        key = requestObjet.get('data')
+        print( key )
 
-        key = self.request.get("");
-        print( key );
         song_key = ndb.Key("Song", key )
         selected_song = song_key.get()
+        #sending info from python to javascript (a different part from js to python)
         self.response.headers['Content-Type'] = "application/json"
         self.response.write(json.dumps(selected_song.serialize()))
 

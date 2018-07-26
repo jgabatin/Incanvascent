@@ -8,7 +8,7 @@
   </head>
   <body>
     {% for song in query_of_songs %}
-      <p><a href="http://localhost:8080" class="song" id="{{song.key}}">{{song.name}}</a></p>
+      <p class="song" id="{{song.key}}">{{song.name}}</p>
     {% endfor %}
 
   </body>
