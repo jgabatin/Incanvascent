@@ -26,17 +26,46 @@ body {
 }
 
 .aboutus {
+  padding-top: 20px;
   font-size: xx-large;
   color: #FF6501;
+}
+
+.padimg {
+  padding-top: 10px;
+}
+
+#j {
+  border: 3px solid #FF6501;
+}
+
+#d {
+  border: 3px solid #FF6501;
+}
+
+#c {
+  border: 3px solid #FF6501;
+}
+
+#john {
+  font-size: x-large;
+}
+
+#damon {
+  font-size: x-large;
+}
+
+#cher {
+  font-size: x-large;
 }
 
 .floating-box {
   display: flex;
   justify-content: space-around;
   margin: auto;
-  padding-left: : 100px;
-  padding-right: : : 100px;
-  padding-top: : 100px;
+  padding-left: : 20px;
+  padding-right: : : 20px;
+  padding-top: : 20px;
   border: color: #7D1D3F;
 }
 
@@ -51,9 +80,40 @@ body {
   justify-content: space-around;
   text-align: center;
   margin: 50px;
-
 }
+
+#j1 {
+  color: white;
+  border-radius: 25px;
+  background: #FF6501;
+  padding: 20px;
+  width: 300px;
+  height: 100px;
+  box-shadow: 0 5px lightgray;
+}
+
+#d1 {
+  color: white;
+  border-radius: 25px;
+  background: #FF6501;
+  padding: 20px;
+  width: 300px;
+  height: 100px;
+  box-shadow: 0 5px lightgray;
+}
+
+#c1 {
+  color: white;
+  border-radius: 25px;
+  background: #FF6501;
+  padding: 20px;
+  width: 300px;
+  height: 100px;
+  box-shadow: 0 5px lightgray;
+}
+
 .grid {
+  padding-bottom: 25px;
   display: grid;
   grid-template-columns: auto auto auto;
 }
