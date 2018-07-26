@@ -8,12 +8,12 @@ from google.appengine.api import users
 from models import Visitor, Song
 
 
-
 jinja_current_directory = jinja2.Environment(
     loader=jinja2.FileSystemLoader( os.path.dirname(__file__) ),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+# KEY_OF_SONG = ""
 
 # Sign In stuff
 class Main_Page( webapp2.RequestHandler ):
@@ -31,8 +31,7 @@ class Main_Page( webapp2.RequestHandler ):
             current_key = ndb.Key('Visitor', current_user.user_id() )
             current_visitor = current_key.get()
             if not current_visitor:
-                current_visitor = Visitor(key=current_key, name=current_user.nickname(), email=current_user.email(), id=current_user.user_id(), page_view_count=0 )
-            current_visitor.page_view_count += 1
+                current_visitor = Visitor(key=current_key, name=current_user.nickname(), email=current_user.email(), id=current_user.user_id() )
             current_visitor.put()
 
             #display
@@ -42,7 +41,6 @@ class Main_Page( webapp2.RequestHandler ):
             'user_addr' : current_user.email(),
             'user_id' : current_user.user_id(),
             'signout_page_url' : users.create_logout_url('/'),
-            'number_of_views' : current_visitor.page_view_count,
             }
             self.response.write( with_user_template.render( jinja_values ))
 
@@ -53,26 +51,31 @@ class Tutorial_Page( webapp2.RequestHandler ):
         self.response.write( start_template.render())
 
 
-
-# class Home_Page(webapp2.RequestHandler):
-#     def get(self):
-#
-
-
 class Piano_Page( webapp2.RequestHandler ):
     def get(self):
         start_template = jinja_current_directory.get_template("templates/piano_page.html")
-
         self.response.write( start_template.render() )
-        # song_id = self.request.get("ID") #SET LATER
+
+
+class Select_Song_Page( webapp2.RequestHandler ):
+    def get(self):
+        start_template = jinja_current_directory.get_template("templates/select_song_page.html")
+        my_query = Song.query().fetch();
+        self.response.write( start_template.render({'query_of_songs' : my_query}) )
+
 
 class Song_Handler(webapp2.RequestHandler):
     def get(self):
-        song_key = ndb.Key("Song",5021194726146048)
+        ##GET KEY SOMEHOW
+
+        requestObject = json.loads(self.request.body)
+        userdata = requestObjet.get('data')
+        myuser = UserData()
+
+        key = self.request.get("");
+        print( key );
+        song_key = ndb.Key("Song", key )
         selected_song = song_key.get()
-
-
-
         self.response.headers['Content-Type'] = "application/json"
         self.response.write(json.dumps(selected_song.serialize()))
 
@@ -90,6 +93,7 @@ class Add_Song_Page( webapp2.RequestHandler ):
         type = int(math.ceil( math.sqrt(len( notes )) ))
         name = self.request.get("name")
         artist = self.request.get("artist")
+
 
         search = Song(name=name, artist=artist, note_progression=notes, type=type )
         search.put()
@@ -109,61 +113,13 @@ class About_Us( webapp2.RequestHandler ):
         start_template = jinja_current_directory.get_template("templates/aboutus.html")
         self.response.write( start_template.render())
 
-#         if not search_term:
-#             search_term = "dog"
-#         else:
-#             lterm = search_term.lower()
-#             key = ndb.Key('Searches', lterm )
-#             search = key.get()
-#             if not search:
-#                 search = Searches(key=key, count=0, word=lterm)
-#
-#             search.increment()
-#             search.put()
-#             # my_query = Searches.query( Searches.word == search_term.lower() ).fetch()
-#             # if len(my_query) == 0:
-#             #     currentSearch = Searches( word=search_term.lower(), count=1 )
-#             #     currentSearch.put()
-#             #     #UPDATE AND CREATED
-#             # else:
-#             #     currentSearch = my_query[0]
-#             #     currentSearch.increment()
-#             #     currentSearch.put()
-#
-#         params = {
-#             'api_key' : 'kDwqshKjeeNJJIx4voC5ZCYOxATfEzsV',
-#             'q' : search_term,
-#             'limit' : 56,
-#             # 'rating': 'g'
-#         }
-#         form_data = urllib.urlencode(params)
-#         api_url = 'http://api.giphy.com/v1/gifs/search?' + form_data
-#
-#         response = urllib2.urlopen(api_url)
-#         content = json.loads(response.read())
-#         #loads() = load string
-#
-#         gif_urls = []
-#         for img in content['data']:
-#             url = img['images']['original']['url']
-#             gif_urls.append(url)
-#
-#         template = jinja_environment.get_template('output.html')
-#         variables = {
-#             # 'content': content,
-#             'gif_urls' : gif_urls,
-#             'search_term' : search_term,
-#             # 'header' : '<a href="http://localhost:8080">New Search</a> | <a href="http://localhost:8080/recent">Recent Searches</a> | <a href="http://localhost:8080/popular">Popular Searches</a>',
-#         }
-#
-#         self.response.write(template.render(variables))
-
 
 #route mapping
 app = webapp2.WSGIApplication([
     ('/', Main_Page),
     ('/tutorial', Tutorial_Page),
     ('/piano', Piano_Page),
+    ('/select_song', Select_Song_Page),
     ('/add_song', Add_Song_Page),
     ('/aboutus', About_Us),
     ('/get_song', Song_Handler),

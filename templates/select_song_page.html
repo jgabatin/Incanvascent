@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="script/select_song_script.js"></script>
+    <title>Select Song</title>
+
+  </head>
+  <body>
+    {% for song in query_of_songs %}
+      <p><a href="http://localhost:8080" class="song" id="{{song.key}}">{{song.name}}</a></p>
+    {% endfor %}
+
+  </body>
+
+
+</html>
