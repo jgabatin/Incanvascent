@@ -114,11 +114,7 @@ body {
 }
 
 .grid {
-  padding-bottom: 50px;
+  padding-bottom: 25px;
   display: grid;
   grid-template-columns: auto auto auto;
-}
-
-.overall {
-  display: flex;
 }
