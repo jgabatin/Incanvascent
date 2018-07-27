@@ -16,13 +16,15 @@
       Your browser does not support the audio element.
     </audio>
 
-
+    <br></br>
+    <br></br>
     {% for song in query_of_songs %}
       <a href="/piano?key={{song.key.urlsafe()}}" class="song" id="{{song.key}}">
-        <div id="song_choice">
-          <p>{{song.name}}</p>
-          <p>{{song.artist}}</p>
-          
+        <div class="song_choice">
+          <div class="inner_text">
+          <p>Song name: {{song.name}}</br>
+          <p>Artist: {{song.artist}}</br>
+          </div>
         </div>
       </a>
     {% endfor %}
