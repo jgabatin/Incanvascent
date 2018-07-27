@@ -12,7 +12,6 @@ window.onload = function() {
 }
 
 
-
 function call_back()
 {
   //Reset Global Variables
@@ -24,8 +23,6 @@ function call_back()
   {
     notes_location.innerText += " " + note_progression[i];
   }
-
-
 
   var img = document.getElementById("art");
   img.style.visibility = 'visible';
@@ -46,9 +43,6 @@ function call_back()
 }
 
 
-
-
-
 function box_fade( note )
 {
   if( note == note_progression[counter] )
@@ -59,8 +53,9 @@ function box_fade( note )
     if (arr.indexOf("transparent_box") == -1) {
         div.className = "transparent_box";
     }
+
     counter ++;
-    console.log( counter );
+    // console.log( counter );
 
     if( counter == note_progression.length )
     {

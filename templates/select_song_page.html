@@ -9,18 +9,24 @@
   </head>
 
   <body>
-    <a href="/"><button class="btn" id= "hbut">home</button></a>
+    <a href="/"><button class="btn" id="hbut">home</button></a>
 
     <audio autoplay loop>
       <source src="/music/music.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
-    <ul>
+
     {% for song in query_of_songs %}
-      <li><a href="/piano?key={{song.key.urlsafe()}}" class="song" id="{{song.key}}">{{song.name}} {{song.artist}}</a></li>
+      <a href="/piano?key={{song.key.urlsafe()}}" class="song" id="{{song.key}}">
+        <div id="song_choice">
+          <p>{{song.name}}</p>
+          <p>{{song.artist}}</p>
+          
+        </div>
+      </a>
     {% endfor %}
-    </ul>
+
   </body>
 
 
