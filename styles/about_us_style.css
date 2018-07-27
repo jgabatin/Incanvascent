@@ -110,6 +110,10 @@ body {
   margin: 10px;
 }
 
+.textinc {
+  font-size: large;
+}
+
 #j1 {
   color: white;
   border-radius: 25px;
