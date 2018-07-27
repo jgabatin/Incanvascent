@@ -45,28 +45,31 @@ function call_back()
 
 function box_fade( note )
 {
-  if( note == note_progression[counter] )
+  if( counter < note_progression.length )
   {
-    var div, arr;
-    div = document.getElementById("" + counter);
-    arr = div.className.split(" ");
-    if (arr.indexOf("transparent_box") == -1) {
-        div.className = "transparent_box";
-    }
-
-    counter ++;
-    // console.log( counter );
-
-    if( counter == note_progression.length )
+    if( note == note_progression[counter] )
     {
-      for( var i = note_progression.length; i < Math.pow( Song.type, 2 ); i ++ )
+      var div, arr;
+      div = document.getElementById("" + counter);
+      arr = div.className.split(" ");
+      if (arr.indexOf("transparent_box") == -1) {
+          div.className = "transparent_box";
+      }
+
+      counter ++;
+      // console.log( counter );
+
+      if( counter == note_progression.length )
       {
-        console.log( i );
-        div = document.getElementById("" + i);
-        console.log( div );
-        arr = div.className.split(" ");
-        if (arr.indexOf("transparent_box") == -1) {
-            div.className = "transparent_box";
+        for( var i = note_progression.length; i < Math.pow( Song.type, 2 ); i ++ )
+        {
+          // console.log( i );
+          div = document.getElementById("" + i);
+          // console.log( div );
+          arr = div.className.split(" ");
+          if (arr.indexOf("transparent_box") == -1) {
+              div.className = "transparent_box";
+          }
         }
       }
     }
