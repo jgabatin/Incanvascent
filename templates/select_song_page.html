@@ -19,13 +19,21 @@
     <br></br>
     <br></br>
     {% for song in query_of_songs %}
-      <a href="/piano?key={{song.key.urlsafe()}}" class="song" id="{{song.key}}">
+
+      <a href="/piano?key={{song.key.urlsafe()}}"><button class="song_choice">
+        <div class="inner_text">
+        Song name: {{song.name}}</br>
+        Artist: {{song.artist}}</br>
+      </div>
+      </button></a>
+
+      <!-- <a href="/piano?key={{song.key.urlsafe()}}" class="song" id="{{song.key}}">
         <div class="song_choice">
           <div class="inner_text">
           <p>Song name: {{song.name}}</br>
           <p>Artist: {{song.artist}}</br>
           </div>
-        </div>
+        </div> -->
       </a>
     {% endfor %}
 
