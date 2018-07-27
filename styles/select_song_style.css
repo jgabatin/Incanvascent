@@ -25,18 +25,17 @@ body {
 }
 
 .song_choice {
+  cursor: pointer;
   text-align: center;
-  background-color: #f44336;
+  background-color: #FF6501;
   color: white;
   margin: 50px;
-  width: 400px;
-  height: 200px;
-  box-shadow: 5px 5px lightgray;
-  border-radius: 5px;
-  
+  width: 350px;
+  height: 150px;
+  box-shadow: 0 3px white;
+  border-radius: 25px;
+
 }
-
-
 
 .inner_text {
   font-family: 'Varela Round', sans-serif;

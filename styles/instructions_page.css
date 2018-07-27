@@ -4,11 +4,11 @@ body {
   background-size: cover;
   vertical-align: middle;
   text-align: center;
-  animation-duration: 1s;
-  animation-name: slidein;
+  /* animation-duration: 1s;
+  animation-name: slidein; */
 }
 
-@keyframes slidein {
+/* @keyframes slidein {
   from {
     margin-top: 100%;
     width: 100%;
@@ -18,19 +18,14 @@ body {
     margin-bottom: 0%;
     width: 100%;
   }
-}
+} */
 
 .center {
   font-family: 'Varela Round', sans-serif;
-  /* justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-direction: column; */
 }
 
 .palette {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   width: 175px;
 }
 
