@@ -1,2 +1,0 @@
-# Incanvascent
-incanvascent.appspot.com
